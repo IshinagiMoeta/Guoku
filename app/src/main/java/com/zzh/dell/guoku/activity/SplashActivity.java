@@ -1,9 +1,15 @@
-package com.zzh.dell.guoku;
+package com.zzh.dell.guoku.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
-public class Splash extends AppCompatActivity {
+import com.zzh.dell.guoku.R;
+
+/**
+ * 朱张华
+ */
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
