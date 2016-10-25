@@ -7,8 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="no_click">
+        <item name="android:background">@drawable/btn_backgroud</item>
+    </style>
     <!--主界面底部button -->
-    <style name="home_bottomer_tab" >
+    <style name="home_bottomer_tab">
         <item name="android:layout_width">0dp</item>
         <item name="android:background">@drawable/btn_backgroud</item>
         <item name="android:layout_height">match_parent</item>
@@ -20,4 +23,116 @@
         <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>
 
+    <style name="layout_width_more">
+        <item name="android:layout_width">25.0dip</item>
+        <item name="android:layout_height">25.0dip</item>
+    </style>
+
+    <style name="right_top_bar_tv">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">@color/title_bar_gray</item>
+        <item name="android:paddingRight">16.0dip</item>
+    </style>
+
+    <!-- login主题 -->
+    <style name="login_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>  
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <!--<item name="android:windowActionBar">false</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+    </style>
+
+    <style name="pullProgressBarStyleLarge">
+        <item name="android:indeterminateDrawable">@drawable/pull_refresh_progress</item>
+    </style>
+
+    <style name="therm_tab_title_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="share_popwindos">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textColor">@color/g_main</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="edit_item">
+        <item name="android:textColor">@color/g_main</item>
+        <item name="android:padding">10.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="edit_item2">
+        <item name="android:textColor">@color/g_main</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="edit_item_left2">
+        <item name="android:textColor">@color/title_bar_gray</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="GuideEnter">
+        <item name="android:windowEnterAnimation">@anim/guide_in</item>
+    </style>
+
+    <style name="edit_item_left">
+        <item name="android:textColor">@color/title_bar_gray</item>
+        <item name="android:padding">10.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="act_style">
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+    <style name="gridview_count_2">
+        <item name="android:textColor">@color/g_main</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="home_page_item_article_title">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/black_body</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="home_page_item_article_context">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray_fzxx</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+    </style>
+
+    <style name="home_page_item_article_below">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray_fzxx</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lines">1</item>
+    </style>
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

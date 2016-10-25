@@ -1,11 +1,17 @@
 package com.zzh.dell.guoku.utils;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+
+import com.zzh.dell.guoku.app.GuokuApp;
+
 import java.security.MessageDigest;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.regex.Pattern;
 
 /**
@@ -31,6 +37,32 @@ public final class StringUtils {
         }
         localStringBuffer.append("47b41864d64bd46");
         return md5(localStringBuffer.toString());
+    }
+
+    public static String setSubstring(String paramString, int paramInt1, int paramInt2) {
+        return paramString.substring(-2 + paramString.length(), paramString.length());
+    }
+
+    /**
+     * 获取get要的url
+     *
+     * @return
+     */
+    public static String getGetUrl(String path, Map<String, String> paramMap) {
+        int size = paramMap.size();
+        StringBuffer buffer = new StringBuffer(path).append("?");
+        TreeMap<String, String> treeMap = new TreeMap<>();
+        for (Map.Entry<String, String> header : paramMap.entrySet()) {
+            buffer.append(header.getKey()).append("=").append(header.getValue()).append("&");
+            treeMap.put(header.getKey(), header.getValue());
+        }
+        if (GuokuApp.getIntance().getAccount() != null) {
+            buffer.append("session").append("=").append(GuokuApp.getIntance().getAccount().getSession()).append("&");
+            treeMap.put("session", GuokuApp.getIntance().getAccount().getSession());
+        }
+        buffer.append("sign").append("=").append(StringUtils.getSign(treeMap)).append("&");
+        buffer.append("api_key").append("=").append("0b19c2b93687347e95c6b6f5cc91bb87");
+        return buffer.toString();
     }
 
     /**
@@ -115,5 +147,22 @@ public final class StringUtils {
         localDecimalFormat.setMaximumFractionDigits(paramInt);
         localDecimalFormat.setMinimumFractionDigits(paramInt);
         return localDecimalFormat.format(paramDouble);
+    }
+
+
+    public static String getViesion(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        try {
+            return packageManager.getPackageInfo(context.getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    public static String isStringId(String paramString1, String paramString2) {
+        String str = paramString1.replace(paramString2, "");
+        return str.substring(0, -1 + str.length());
     }
 }
